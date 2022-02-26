@@ -6,13 +6,14 @@ on:
 jobs:
   create-asana-ticket:
     runs-on: ubuntu-latest
-    name: Create an asana ticket
-    with:
-      ASANA_SECRET: ${{ secrets.ASANA_SECRET }}
-      ASANA_PROJECT: ${{ secrets.ASANA_PROJECT }}
-      ASANA_SECTION: ${{ secrets.ASANA_SECTION }}
-      GITHUB_CONTEXT: ${{ toJSON(github) }}
+
     steps:
       - uses: actions/checkout@v1
       - run: yarn
-      - run: yarn github-action-asana 
+      - run: yarn github-action-asana
+        name: Create an asana ticket
+        with:
+          ASANA_SECRET: ${{ secrets.ASANA_SECRET }}
+          ASANA_PROJECT: ${{ secrets.ASANA_PROJECT }}
+          ASANA_SECTION: ${{ secrets.ASANA_SECTION }}
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
