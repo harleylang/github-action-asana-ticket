@@ -4,17 +4,15 @@ require('dotenv').config();
 const ASANA_SECRET = process.env.ASANA_SECRET;
 const ASANA_PROJECT = process.env.ASANA_PROJECT;
 const ASANA_SECTION = process.env.ASANA_SECTION;
-const GITHUB_CONTEXT = process.env.GITHUB_CONTEXT;
+const GITHUB_CONTEXT = JSON.parse(process.env.GITHUB_CONTEXT);
 
 const client = asana.Client.create().useAccessToken(ASANA_SECRET);
 
-console.log(GITHUB_CONTEXT, JSON.parse(GITHUB_CONTEXT));
-
-console.log(GITHUB_CONTEXT.event)
+console.log(Object.keys(GITHUB_CONTEXT));
+console.log(Object.keys(GITHUB_CONTEXT.event));
 
 const name = GITHUB_CONTEXT.event.issue.title;
 const url = GITHUB_CONTEXT.event.issue.html_url;
-
 
 // docs for creating tasks:
 // https://developers.asana.com/docs/create-a-task
