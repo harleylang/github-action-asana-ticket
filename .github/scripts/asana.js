@@ -8,8 +8,6 @@ const GITHUB_CONTEXT = JSON.parse(process.env.GITHUB_CONTEXT);
 
 const client = asana.Client.create().useAccessToken(ASANA_SECRET);
 
-console.log(process.env.ASANA_SECTION)
-
 const name = GITHUB_CONTEXT.event.issue.title;
 const url = GITHUB_CONTEXT.event.issue.html_url;
 
