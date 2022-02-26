@@ -1,0 +1,19 @@
+{
+  "name": "github-action-asana-ticket",
+  "version": "1.0.0",
+  "description": "Scripts to trigger asana tickets when issues are opened in a github repo",
+  "main": "index.js",
+  "scripts": {
+    "github-action-asana": "node .github/scripts/asana.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/harleylang/github-action-asana-ticket.git"
+  },
+  "author": "Harley Lang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/harleylang/github-action-asana-ticket/issues"
+  },
+  "homepage": "https://github.com/harleylang/github-action-asana-ticket#readme"
+}
