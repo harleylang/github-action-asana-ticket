@@ -11,6 +11,8 @@ const client = asana.Client.create().useAccessToken(ASANA_SECRET);
 const name = GITHUB_CONTEXT.event.issue.title;
 const url = GITHUB_CONTEXT.event.issue.html_url;
 
+console.log(GITHUB_CONTEXT, JSON.parse(GITHUB_CONTEXT));
+
 // docs for creating tasks:
 // https://developers.asana.com/docs/create-a-task
 client.tasks.createTask({
